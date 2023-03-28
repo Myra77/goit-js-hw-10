@@ -13,7 +13,7 @@ const countryInfo = document.querySelector(".country-info");
 
 inputEl.addEventListener('input', debounce(searchСountry, DEBOUNCE_DELAY));
 
-function searchСountry(){
+function searchСountry() {
     const inputValue = inputEl.value.trim();
     countryList.innerHTML = ''
         if(inputValue !== ""){
@@ -40,16 +40,16 @@ function searchСountry(){
       .map(country => {
             return `<li><img src="${country.flags.svg}" alt=${country.name.official} width="40" height="20">
             <h2> ${country.name.official}</h2>
-            <p><b>Capital :</b>${country.capital}</p>
-            <p><b>Population :</b>${country.population}</p>
-            <p><b>Languages :</b>${Object.values(country.languages).join(", ")}</p></li>`
+            <p><b>Capital: </b>${country.capital}</p>
+            <p><b>Population: </b>${country.population}</p>
+            <p><b>Languages: </b>${Object.values(country.languages).join(", ")}</p></li>`
           })
           .join("");
           countryList.innerHTML = markup;
       }
       function renderCountriesUl(countries) {
         const markup = countries.map(country => {
-            return  `<li><img src="${country.flags.svg}" alt=${country.name.official} width="50" height="25">
+            return  `<li><img src="${country.flags.svg}" alt=${country.name.official} width="40" height="20">
             <h2> ${country.name.official}</h2></li>`})
           .join("");
           countryList.innerHTML = markup; 
